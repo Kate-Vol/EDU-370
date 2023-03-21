@@ -638,22 +638,23 @@ body {
   font-size: 15px;
   font-weight: 600;
 }
-.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-text:hover {
-  transition: color 0.3s ease;
-  color: black;
-}
 .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-img {
   margin-left: 10px;
   border: 10px solid transparent;
   border-left: 13px solid #add136;
 }
-.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-img:hover {
-  transition: border-left-color 0.3s ease;
-  border-left: 13px solid black;
-}
 .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:hover {
   text-decoration: none;
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:hover .featured-project-ref-text {
+  transition: color 0.3s ease;
+  color: black;
+}
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:hover .featured-project-ref-img {
+  transition: border-left-color 0.3s ease;
+  border-left: 13px solid green;
 }
 .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:visited {
   text-decoration: none;
@@ -757,10 +758,7 @@ footer .partners-container {
   border-bottom: 1px solid #ededed;
 }
 footer .partners-container .partner-logo {
-  padding: 20px 20px 20px 0;
-}
-footer .partners-container .partner-logo:last-child {
-  padding-right: 0;
+  padding: 20px 10px;
 }
 footer .contact-info .copyright-info {
   font-size: 13px;

@@ -632,25 +632,24 @@ body {
 
         .ref-anchor {
           display: flex;
+          
 
           .featured-project-ref-text {
             color: #737373;
             font-size: 15px;
             font-weight: 600;
-            &:hover {
-              transition: color .3s ease;
-              color: black;
-            }
+            // &:hover {
+             
+            // }
           }
 
           .featured-project-ref-img {
             margin-left: 10px;
             border: 10px solid transparent;
             border-left: 13px solid $main-theme-color-bright;
-            &:hover {
-              transition: border-left-color .3s ease;
-              border-left: 13px solid black;
-            }
+            // &:hover {
+             
+            // }
           }
 
           user-select: none;
@@ -659,9 +658,20 @@ body {
           &:hover {
             text-decoration: none;
             cursor: pointer;
-            &:first-child{
-              
+            background-color: rgba(255, 255, 255, 0.849);
+            
+            // background-color: #26a6d1;
+
+            .featured-project-ref-text{
+              transition: color .3s ease;
+              color: black;
             }
+
+            .featured-project-ref-img {
+              transition: border-left-color .3s ease;
+              border-left: 13px solid green;
+            }
+            
           }
   
           &:visited {
@@ -787,10 +797,7 @@ footer {
     border-bottom: 1px solid #ededed;
 
     .partner-logo {
-      padding: 20px 20px 20px 0;
-      &:last-child{
-        padding-right: 0;
-      }
+      padding: 20px 10px;
     }
   }
 

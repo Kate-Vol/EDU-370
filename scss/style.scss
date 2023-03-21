@@ -1,0 +1,810 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+
+$main-theme-color: #99c50a;
+$main-theme-color-bright: #add136;
+$main-header-color: #515151;
+$main-text-color: #838383;
+$main-cover-color: white;
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin button() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    user-select: none;
+    transition: background-color .3s ease;
+    cursor: pointer;
+}
+
+
+@mixin round-button( $background-color: #bcda5c, $color: white, $width: 100px, $height: 36px) {
+    @include button();
+  padding: 5px;
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+  color: $color;
+  font-size: 13px;
+  font-weight: bolder;
+  border-radius: $height / 2;
+  border: 0;
+
+  &:hover {
+    transition: background-color .3s ease;
+    background: lighten($background-color, 10%);
+  }
+
+  &:active {
+    transition: none;
+    background: lighten($background-color, 15%);
+  }
+}
+
+@mixin rectangle-button( $background-color: #99c50a, $color: white, $width: 250px, $height: 70px) {
+    @include button();
+  padding: 5px;
+  height: $height;
+  width: $width;
+  background-color: $background-color;
+  color: $color;
+  font-size: 19px;
+  font-weight: bolder;
+  border-radius: ($height / 7);
+  border: 0;
+
+  &:hover {
+    transition: background-color .3s ease;
+    background: lighten($background-color, 5%);
+  }
+
+  &:active {
+    transition: none;
+    background: lighten($background-color, 15%);
+  }
+}
+
+
+html {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1300px;
+}
+
+body {
+  width: 1300px;
+  min-width: 1300px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 100vh;
+}
+
+.header {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 140px;
+
+  .header-brand {
+    width: 220px;
+    display: flex;
+  }
+
+  .header-logo {
+    height: 36px;
+    width: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    .logo-line-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: normal;
+
+      .logo-line-1-1 {
+        background-color: $main-theme-color;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+      }
+
+      .logo-line-1-2 {
+        background-color: $main-theme-color;
+        width: 7px;
+        height: 20px;
+        border-radius: 3px;
+        margin-top: 2px;
+      }
+    }
+
+    .logo-line-2 {
+      background-color: $main-theme-color;
+      width: 7px;
+      height: 36px;
+      border-radius: 3px;
+    }
+
+    .logo-line-3 {
+      background-color: $main-theme-color;
+      width: 7px;
+      height: 29px;
+      border-radius: 3px;
+    }
+
+  }
+
+  .header-company-name {
+    font-family: 'Nunito', sans-serif;
+    font-size: 31px;
+    font-weight: 700;
+    color: #595959;
+    margin-left: 9px;
+  }
+
+  .header-navbar {
+    display: flex;
+    justify-content: space-between;
+
+
+    .navbar-item {
+      font-size: 13px;
+      font-weight: 600;
+      color: #adadad;
+      padding: 0 14px;
+      user-select: none;
+
+      a {
+        text-decoration: none;
+        color: $main-text-color;
+
+        &:hover {
+          text-decoration: none;
+          color: black;
+        }
+
+        &:visited {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .button-login {
+    @include round-button();
+  }
+}
+
+
+.main-offer {
+  height: 570px;
+  width: 100%;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.4)),
+  url("../img/mainImg.jpg");
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $main-cover-color;
+  position: relative;
+
+  .offer-header {
+    font-size: 49px;
+    font-weight: 400;
+  }
+
+  .offer-continuation {
+    font-size: 35px;
+    font-weight: 100;
+    line-height: 80px;
+  }
+
+  .offer-button {
+    @include rectangle-button();
+    margin-top: 35px;
+  }
+
+  .slide-button-container {
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    right: 135px;
+    bottom: 40px;
+    display: flex;
+    user-select: none;
+
+    a {
+      text-decoration: none;
+      color: $main-cover-color;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scaleY(1.5);
+      }
+
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+
+.company-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 0 170px;
+
+  .description-logo {
+    color: $main-theme-color-bright;
+    font-size: 65px;
+    margin-top: 76px;
+  }
+
+  .description-header {
+    
+    margin-top: 30px;
+    margin-bottom: 13px;
+    padding: 0 220px;
+    font-size: 31px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $main-header-color;
+    line-height: 50px;
+    text-align: center;
+  }
+
+  .description-text {
+    margin-top: 36px;
+    font-size: 19px;
+    color: $main-text-color;
+    line-height: 32px;
+    text-align: center;
+  }
+}
+
+
+.program-tab-container {
+  width: 100%;
+  align-self: center;
+  padding: 0 160px;
+  margin-top: 152px;
+
+  .program-level-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+
+    .tab {
+
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      color: $main-header-color;
+      cursor: pointer;
+      font-size: 33px;
+      padding: 0px 15px 36px 15px;
+      user-select: none;
+      position: relative;
+      top: 1px;
+      border-bottom: 1px solid #e6e6e6;
+
+
+      .program-level-number {
+        background-color: $main-header-color;
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        font-size: 21px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .program-level-name {
+        margin-left: 30px;
+        font-weight: 200;
+
+        
+      }
+
+
+    }
+
+    .active {
+      .program-level-number {
+        background-color: $main-theme-color-bright;
+      }
+
+      &.tab {
+        border-bottom: 1px solid $main-theme-color-bright;
+      }
+    }
+  }
+}
+
+
+.program-level-description-container {
+  padding: 0 160px;
+  width: 100%;
+  align-self: center;
+
+  .program-level-description {
+
+    display: flex;
+    align-items: center;
+
+    .program-level-picture {
+      min-width: 280px;
+      height: 280px;
+      font-size: 116px;
+      color: #26a6d1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .program-level-about {
+      margin-left: 26px;
+
+      a {
+        text-decoration: none;
+        color: $main-text-color;
+
+
+        &:visited {
+          text-decoration: none;
+        }
+      }
+
+      .program-level-about-header {
+        color: $main-theme-color-bright;
+        font-size: 25px;
+
+        &:hover {
+          text-decoration: none;
+          color: black;
+        }
+
+      }
+
+      .program-level-about-text {
+        color: #949494;
+        font-size: 17px;
+        line-height: 30px;
+        margin-top: 26px;
+
+      }
+    }
+  }
+}
+
+
+.main-opportunities-container {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .opportunities-card {
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    &:nth-child(odd) {
+      padding: 0 50px 0 110px;
+    }
+
+    &:nth-child(even) {
+      padding: 0 110px 0 50px;
+    }
+
+    .opportunities-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 180px;
+      min-width: 180px;
+      font-size: 90px;
+      
+    }
+
+    .opportunities-description {
+      margin: 40px 20px 45px 20px;
+
+      .opportunities-description-header {
+        font-size: 23px;
+        font-weight: 600;
+        color: $main-header-color;
+        
+      }
+
+      .opportunities-description-text {
+        font-size: 17px;
+        color: $main-header-color;
+        margin-top: 24px;
+        line-height: 30px;
+      }
+
+      .opportunities-submit-button {
+        font-size: 15px;
+        margin-top: 22px;
+      }
+    }
+  }
+
+  .blue {
+    background-color: #e2f8ff;
+    .opportunities-submit-button {
+      @include rectangle-button(#26a6d1, $width: 190px, $height: 50px);
+    }
+  }
+
+  .green {
+    background-color: #f5f9eb;
+    .opportunities-submit-button {
+      @include rectangle-button($main-theme-color-bright, $width: 190px, $height: 50px);
+    }
+  }
+}
+
+
+.featured-projects-info {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 160px;
+  margin-top: 70px;
+
+
+  .featured-projects-invitation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .featured-projects-main-info {
+      max-width: 680px;
+
+      .featured-projects-main-info-header {
+        color: $main-header-color;
+        font-size: 29px;
+        font-weight: 600;
+      }
+
+      .featured-projects-main-info-text {
+        color: #8f8f8f;
+        font-size: 17px;
+        line-height: 30px;
+        margin-top: 18px;
+      }
+    }
+
+    .featured-projects-invitation-button {
+      @include rectangle-button($background-color: white, $color: #8f8f8f, $width: 180px, $height: 50px);
+      border: 1px solid #8f8f8f;
+      font-size: 15px;
+      &:hover {
+        transition: background-color .3s ease;
+        background-color: #8f8f8f;
+        color: white;
+      }
+    
+      &:active {
+        transition: none;
+        background-color: #8f8f8f;
+        color: white;
+      }
+
+    }
+  }
+
+  .featured-projects-container {
+    display: grid;
+    gap:36px;
+    grid-template-columns: repeat(3, 305px);
+    width: 100%;
+    margin-top: 60px;
+
+    .featured-project {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+      width: 302px;
+      border: 1px solid #d6d6d6;
+      border-radius: 10px;
+      overflow: hidden;
+
+      .featured-project-img {
+        position: relative;
+        font-size: 15px;
+        overflow: hidden;
+        width: 100%;
+
+        img {
+          width: 100%;
+          object-fit: fill;
+        }
+
+        .new-icon {
+          height: 70px;
+          width: 180px;
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          padding-bottom: 9px;;
+          position: absolute;
+          top: -15px;
+          left: -90px;
+          color: white;
+          background-color: $main-theme-color-bright;
+          transform: rotate(-45deg);
+        }
+
+        .featured-progect-button-price {
+          position: absolute;
+          bottom: 25px;
+          right: 15px;
+
+          @include rectangle-button(#26a6d1,$width: 140px, $height: 36px);
+          font-size: 16px;
+          font-weight: 400;
+
+          .bold {
+            font-weight: 700;
+          }
+        }
+
+      }
+
+      .featured-project-description {
+        padding: 18px 26px 18px 20px;
+
+        .featured-project-description-header {
+          color: #484848;
+          font-size: 17px;
+          font-weight: 700;
+        }
+
+        .featured-project-description-text {
+          color: #6e6e6e;
+          font-size: 13px;
+          font-weight: 600;
+          line-height: 22px;
+          margin-top: 10px;
+        }
+      }
+
+      .featured-project-loadbar-wrapper {
+        width: 100%;
+        padding: 0 26px;
+
+        .featured-project-loadbar {
+          height: 14px;
+          border-radius: 7px;
+          user-select: none;
+
+        }
+
+        .featured-project-loadbar-info {
+          display: flex;
+          justify-content: space-between;
+          color: #949494;
+          font-size: 13px;
+          font-weight: 600;
+          padding: 16px 0;
+          border-bottom: 1px solid #d6d6d6;
+
+          .featured-project-loadbar-funded {
+          }
+
+          .featured-project-loadbar-days-left {
+          }
+        }
+      }
+
+      .featured-project-ref {
+        padding: 20px;
+        align-self: end;
+
+        .ref-anchor {
+          display: flex;
+
+          .featured-project-ref-text {
+            color: #737373;
+            font-size: 15px;
+            font-weight: 600;
+          }
+
+          .featured-project-ref-img {
+            margin-left: 10px;
+            border: 10px solid transparent;
+            border-left: 13px solid $main-theme-color-bright;
+          }
+
+          user-select: none;
+          text-decoration: none;
+
+          &:hover, &:focus {
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+.community-info {
+  background-image: url(../img/mainImg2.jpg);
+  background-size: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+
+  .community-info-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 175px;
+
+    .community-info-header {
+      text-align: center;
+      font-size: 39px;
+      font-weight: 600;
+      color: #9ec02d;
+    }
+
+    .community-info-description {
+      text-align: center;
+      font-size: 19px;
+      line-height: 33px;
+      color: #949494;
+      padding: 30px;
+    }
+
+    .feedbacks-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      margin-top: 60px;
+      width: 100%;
+
+      .feedback {
+        width: 400px;
+
+        .feedback-text-block {
+          border-radius: 10px;
+          padding: 20px;
+          position: relative;
+          background-color: white;
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 80px;
+            bottom: -20px;
+            border: 20px solid transparent;
+            border-left: 20px solid white;
+            border-top: 20px solid white;
+          }
+
+          .feedback-header {
+            font-size: 21px;
+            font-weight: 600;
+            color: #9ec02d;
+            text-align: center;
+          }
+
+          .feedback-text {
+            font-size: 13px;
+            color: $main-text-color;
+            text-align: center;
+            line-height: 22px;
+            margin-top: 10px;
+          }
+        }
+
+        .feedback-signature {
+          display: flex;
+          margin: 32px 50px 48px 50px;
+
+          .feedback-signature-photo {
+            height: 60px;
+            width: 60px;
+            border-radius: 10px;
+
+          }
+
+          .feedback-signature-name {
+            font-size: 15px;
+            font-weight: 700;
+            padding: 20px;
+            color: #494949;
+            align-self: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .partners-container {
+    height: 132px;
+    width: 100%;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #ededed;
+
+    .partner-logo {
+      height: 100%;
+      padding: 60px 15px;
+    }
+  }
+
+  .copyright-info {
+    font-size: 13px;
+    color: $main-text-color;
+    font-weight: 600;
+    padding: 24px;
+
+    a {
+      user-select: none;
+      text-decoration: none;
+      color: $main-text-color;
+
+      &:hover {
+        text-decoration: none;
+        color: black;
+      }
+
+      &:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -31,7 +31,7 @@ $main-cover-color: white;
   color: $color;
   font-size: 13px;
   font-weight: bolder;
-  border-radius: $height / 2;
+  border-radius: calc($height / 2);
   border: 0;
 
   &:hover {
@@ -54,7 +54,7 @@ $main-cover-color: white;
   color: $color;
   font-size: 19px;
   font-weight: bolder;
-  border-radius: ($height / 7);
+  border-radius: calc($height / 7);
   border: 0;
 
   &:hover {
@@ -547,24 +547,24 @@ body {
       .featured-project-img {
         position: relative;
         font-size: 15px;
-        overflow: hidden;
         width: 100%;
 
         img {
           width: 100%;
-          object-fit: fill;
+          height: 100%;
+          object-fit: cover;
         }
 
         .new-icon {
-          height: 70px;
-          width: 180px;
+          height: 50px;
+          width: 120px;
           display: flex;
           justify-content: center;
           align-items: end;
           padding-bottom: 9px;;
           position: absolute;
-          top: -15px;
-          left: -90px;
+          top: -5px;
+          left: -45px;
           color: white;
           background-color: $main-theme-color-bright;
           transform: rotate(-45deg);
@@ -638,6 +638,7 @@ body {
 
         .ref-anchor {
           display: flex;
+          color:red;
 
           .featured-project-ref-text {
             color: #737373;
@@ -652,15 +653,15 @@ body {
           }
 
           user-select: none;
-          text-decoration: none;
+          
 
           &:hover, &:focus {
             text-decoration: none;
             cursor: pointer;
+            color: black;
           }
         }
       }
-
     }
   }
 }

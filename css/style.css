@@ -630,7 +630,6 @@ body {
 }
 .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor {
   display: flex;
-  color: red;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -640,15 +639,25 @@ body {
   font-size: 15px;
   font-weight: 600;
 }
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-text:hover {
+  transition: color 0.3s ease;
+  color: black;
+}
 .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-img {
   margin-left: 10px;
   border: 10px solid transparent;
   border-left: 13px solid #add136;
 }
-.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:hover, .featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:focus {
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor .featured-project-ref-img:hover {
+  transition: border-left-color 0.3s ease;
+  border-left: 13px solid black;
+}
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:hover {
   text-decoration: none;
   cursor: pointer;
-  color: black;
+}
+.featured-projects-info .featured-projects-container .featured-project .featured-project-ref .ref-anchor:visited {
+  text-decoration: none;
 }
 
 .community-info {
@@ -657,16 +666,14 @@ body {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 650px;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  padding: 70px 175px 15px 175px;
 }
 .community-info .community-info-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 175px;
 }
 .community-info .community-info-wrapper .community-info-header {
   text-align: center;
@@ -679,7 +686,7 @@ body {
   font-size: 19px;
   line-height: 33px;
   color: #949494;
-  padding: 30px;
+  margin: 30px;
 }
 .community-info .community-info-wrapper .feedbacks-container {
   display: flex;
@@ -751,14 +758,13 @@ footer .partners-container {
   border-bottom: 1px solid #ededed;
 }
 footer .partners-container .partner-logo {
-  height: 100%;
-  padding: 60px 15px;
+  margin: 0 15px;
 }
 footer .copyright-info {
   font-size: 13px;
   color: #838383;
   font-weight: 600;
-  padding: 24px;
+  margin: 24px;
 }
 footer .copyright-info a {
   -webkit-user-select: none;

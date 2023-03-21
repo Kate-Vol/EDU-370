@@ -638,27 +638,40 @@ body {
 
         .ref-anchor {
           display: flex;
-          color:red;
 
           .featured-project-ref-text {
             color: #737373;
             font-size: 15px;
             font-weight: 600;
+            &:hover {
+              transition: color .3s ease;
+              color: black;
+            }
           }
 
           .featured-project-ref-img {
             margin-left: 10px;
             border: 10px solid transparent;
             border-left: 13px solid $main-theme-color-bright;
+            &:hover {
+              transition: border-left-color .3s ease;
+              border-left: 13px solid black;
+            }
           }
 
           user-select: none;
           
 
-          &:hover, &:focus {
+          &:hover {
             text-decoration: none;
             cursor: pointer;
-            color: black;
+            &:first-child{
+              
+            }
+          }
+  
+          &:visited {
+            text-decoration: none;
           }
         }
       }
@@ -673,17 +686,16 @@ body {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 650px;
+  height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: end;
+  padding: 70px 175px 15px 175px;
 
   .community-info-wrapper {
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 175px;
+   
 
     .community-info-header {
       text-align: center;
@@ -697,7 +709,7 @@ body {
       font-size: 19px;
       line-height: 33px;
       color: #949494;
-      padding: 30px;
+      margin: 30px;
     }
 
     .feedbacks-container {
@@ -751,7 +763,6 @@ body {
             height: 60px;
             width: 60px;
             border-radius: 10px;
-
           }
 
           .feedback-signature-name {
@@ -782,8 +793,7 @@ footer {
     border-bottom: 1px solid #ededed;
 
     .partner-logo {
-      height: 100%;
-      padding: 60px 15px;
+      margin: 0 15px;
     }
   }
 
@@ -791,7 +801,7 @@ footer {
     font-size: 13px;
     color: $main-text-color;
     font-weight: 600;
-    padding: 24px;
+    margin: 24px;
 
     a {
       user-select: none;
